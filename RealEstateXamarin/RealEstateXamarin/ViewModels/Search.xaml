@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RealEstateXamarin.ViewModels.Search">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Spacing="0">
+                <Entry Placeholder="Search for the address ... "  HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand"  TextChanged="PlacesSearch" />
+                <ListView x:Name="ListViewPredictions" BackgroundColor="White"   IsVisible="false" HasUnevenRows="True" ItemSelected="SearchAddress" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <TextCell  Text="{Binding Name}" TextColor="Green"/>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+            <maps:Map  x:Name="MyMap" Grid.Row="1"  />
+
+            <Button Text="Update map from my location." Grid.Row="2"  Clicked="UpdateMapFromMyLocation" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand" />
+            <Picker x:Name ="PickerPrice"   SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                            Title="Select a Price ..."  Grid.Row="3"  Margin="20, 0"/>
+
+            <Label Grid.Row="4"  HorizontalOptions="Center" Text="{Binding  Source={x:Reference sliderPrice},
+		                                                                    Path=Value,
+		                                                                    StringFormat='Search radius = {0} Km.'}"/>
+            <Slider x:Name="sliderPrice" Grid.Row="5" ValueChanged="SliderUpdateMap"  HorizontalOptions="FillAndExpand" Maximum="25" Minimum="1"  Value="{Binding Distance}"/>
+
+            <Button Text="Search data" Grid.Row="6" VerticalOptions="CenterAndExpand" Clicked="SearchQuery"  HorizontalOptions="FillAndExpand" />
+
+        </Grid>
+     </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

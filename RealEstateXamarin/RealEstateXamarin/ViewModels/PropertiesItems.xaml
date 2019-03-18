@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RealEstateXamarin.ViewModels.PropertiesItems">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <maps:Map Grid.Row="0"  x:Name="MyMap"  HeightRequest="200" />
+            <ScrollView Grid.Row="1">
+                <ListView x:Name="ListViewProperties" BackgroundColor="White"  HasUnevenRows="True" ItemSelected="searchPropertyDetails" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HeightRequest="80" Padding="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Image  Grid.Column="0" Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="{Binding MainImageURL}" />
+                                    <Grid  Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding  Name, StringFormat=' {0} '}" VerticalTextAlignment="Center" HeightRequest="23" FontAttributes="Bold"   FontSize="Medium" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+
+                                        <Label FontSize="Small" Grid.Row="1" Margin="0" VerticalTextAlignment="Center" HeightRequest="17" Text="{Binding Price, StringFormat='Price: {0} yens.'}" HorizontalTextAlignment="Start" HorizontalOptions="Start" />
+
+                                        <Label FontSize="Micro" Grid.Row="2" Margin="0" VerticalTextAlignment="Center" Text="{Binding Address }" LineBreakMode="TailTruncation" MaxLines="2" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

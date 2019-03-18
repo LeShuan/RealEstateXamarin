@@ -1,0 +1,16 @@
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\bin\Debug\netstandard2.0\RealEstateXamarin.deps.json
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\bin\Debug\netstandard2.0\RealEstateXamarin.dll
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.csproj.CoreCompileInputs.cache
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.AssemblyInfoInputs.cache
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.AssemblyInfo.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\bin\Debug\netstandard2.0\RealEstateXamarin.pdb
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.dll
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.pdb
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\ViewModels\PropertiesItems.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\ViewModels\PropertyDetails.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\ViewModels\Search.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\ViewModels\Upload.xaml.g.cs
+C:\Users\e12\source\repos\RealEstateXamarin\RealEstateXamarin\RealEstateXamarin\obj\Debug\netstandard2.0\RealEstateXamarin.csprojAssemblyReference.cache

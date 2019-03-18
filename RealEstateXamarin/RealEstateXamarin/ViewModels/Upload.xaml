@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RealEstateXamarin.ViewModels.Upload">
+    <ContentPage.Content>
+      
+
+
+            <ScrollView>
+            
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+             
+                </Grid.RowDefinitions>
+
+               
+                    <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center" Margin="0,20,0,0">
+                        <Label Text="Title : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                        <Entry  Text="{Binding Name}" Placeholder="Title" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start" />
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" Grid.Row="1" HorizontalOptions="Center">
+                        <Label Text="Price in Yens : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Entry  Text="{Binding Price}" Keyboard="Numeric"  Placeholder="Price" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start"  />
+                    </StackLayout>
+
+
+                <StackLayout Grid.Row="2" Spacing="0">
+                    <Entry Placeholder="Search for the address ... "  HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand"  TextChanged="PlacesSearch" />
+                    <ListView x:Name="ListViewPredictions" BackgroundColor="White"   IsVisible="false" HasUnevenRows="True" ItemSelected="SearchAddress" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <TextCell  Text="{Binding Name}" TextColor="Green"/>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+
+                <maps:Map  x:Name="MyMap" Grid.Row="3"  />
+
+                <Button Text="Update map from my location." Grid.Row="4" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand" />
+
+                <StackLayout Orientation="Horizontal" Grid.Row="5" HorizontalOptions="Center" Margin="0,20,0,0">
+                        <Label Text="Size of the property : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Entry  Text="{Binding Size}" Keyboard="Numeric"  Placeholder="Size in sqm" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Grid.Row="6" HorizontalOptions="Center">
+                        <Label Text="Number of Rooms : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Entry  Text="{Binding Rooms}" Keyboard="Numeric"  Placeholder="Number of Rooms" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start"  />
+                    </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="7" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Label Text="Number of ParkingSlots : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Entry  Text="{Binding ParkingSlots}" Keyboard="Numeric"  Placeholder="Number of ParkingSlots" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="8" HorizontalOptions="Center">
+                    <Label Text="Number of Bathrooms : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Entry  Text="{Binding Bathrooms}" Keyboard="Numeric"  Placeholder="Number of Bathrooms" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start"  />
+                </StackLayout>
+                <Label Grid.Row="9" Text="Description of the Property" FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" ></Label>
+                <Editor  Grid.Row="10" Text="{Binding Description }"  Placeholder="Write a description or relevant information about your property." AutoSize="TextChanges" MaxLength="1024" MinimumHeightRequest="40"/>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="11" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Label Text="Upload Images : " FontSize="20"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                    <Button Text="Upload" Clicked="UploadImage" VerticalOptions="CenterAndExpand" WidthRequest="150"  HorizontalOptions="Start" />
+                </StackLayout>
+                
+
+                <ListView x:Name="ListViewUploads" HeightRequest="10" Grid.Row="12" HasUnevenRows="True" ItemSelected="DeleteImage">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="2,2,2,2">
+                                    <Label Text="Delete Image?" FontAttributes="Bold" />
+                                    <Label Text="{Binding FileName}" FontAttributes="Bold" TextColor="Red" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Text="Upload Property" Grid.Row="13" Clicked="UploadProperty" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand" />
+
+            </Grid>
+        </ScrollView>
+     
+    </ContentPage.Content>
+</ContentPage>
